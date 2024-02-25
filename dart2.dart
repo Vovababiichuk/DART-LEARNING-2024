@@ -42,7 +42,6 @@
 
 //TODO - ІНКАПСУЛЯЦІЯ
 
-
 //? 1. ІНКАПСУЛЯЦІЯ - в капсулі. Все що відбувається з цим обьектом повинно відбуватися в середині цього обьекта...
 
 //? Приховування
@@ -104,4 +103,20 @@
 // }
 
 //TODO - НАСЛІДУВАННЯ
+//TODO - НАСЛІДУВАННЯ
+//TODO - НАСЛІДУВАННЯ
+// Ми не маємо права наслідуватися від двух батьків...БАТЬКО повинен бути тільки один... (тому що це може привести до проблеми РОМБІЧНОГО НАСЛІДУВАННЯ...)
 
+class FordMustache extends Car {
+  FordMustache(int maxSpeed, String color, String bamperType)
+  // в super ми визиваєм конструктор батьківського класу...
+      : super(220, color, bamperType);
+}
+
+class Car {
+  int _maxSpeed;
+  String color;
+  String bamperType;
+
+  Car(this._maxSpeed, this.color, this.bamperType);
+}
