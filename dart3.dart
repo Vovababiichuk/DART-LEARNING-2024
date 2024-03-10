@@ -22,12 +22,32 @@ void main() {
   print(cat1 is Animal);
 }
 
-class Dog extends Animal {
+// інтерфейс (інтерфейс як правило робиться абстрактним)
+// інтерфейс Jumpable не залежить ні від кого. Він може чіплятися на тварину на людину....на що завгодно...
+// Будь-який обьект до якого чіпляється інтерфейс зобовязаний імплементувати всі ф-ї даного інтерфейса...
+abstract class Jumpable {
+  void jump();
+}
+
+// міксін
+// на відміну від інтерфейсу мфксін не говорить щось обовязкове робити. Він просто дає нам можливість...
+mixin NightVision {
+  void switchOnNightVision() {
+    print('Night vision is on');
+  }
+}
+
+class Dog extends Animal with NightVision implements Jumpable {
   Dog({required String name, required int size}) : super(size, name: name);
 
   @override
   void showVoice() {
     print('${name} say Woof');
+  }
+
+  @override
+  void jump() {
+    // TODO: implement jump
   }
 }
 
