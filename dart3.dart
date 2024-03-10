@@ -13,6 +13,11 @@ void main() {
   final cat2 = Cat(size: 5, name: 'Tom');
   final dog1 = Dog(size: 20, name: 'Bob');
 
+  // дженерики
+  final sergey = Sergey<Dog>();
+  // sergey.handleSomething<String>('Hello');
+  sergey.handleSomething(dog1);
+
   cat1.showVoice();
   cat2.showVoice();
   dog1.showVoice();
@@ -20,6 +25,13 @@ void main() {
 
   print(cat1 is Dog);
   print(cat1 is Animal);
+}
+
+// дженерики
+class Sergey<T> {
+  void handleSomething(T object) {
+    print(object);
+  }
 }
 
 // інтерфейс (інтерфейс як правило робиться абстрактним)
